@@ -9,7 +9,8 @@ st.markdown("Upload your messy e-shop XML feed. We validate `<SHOPITEM>` taxonom
 # SECURE TOKEN PATCH: Replaced simple "success" check with an obscure token
 is_paid = st.query_params.get("token") == "sk_live_9f82hXzPqL1m"
 if is_paid:
-    st.success("✅ Platba byla úspěšná! Nahrajte svůj XML feed znovu pro okamžité stažení opravené verze.")
+    st.success("✅ Platba byla úspěšná! Váš prémiový přístup je aktivní.")
+    st.info("👇 **POSLEDNÍ KROK:** Nahrajte svůj XML feed znovu do pole níže. Systém jej okamžitě zpracuje a odemkne tlačítko ke stažení.")
 
 # 3. FILE UPLOADER
 uploaded_file = st.file_uploader("Upload XML Feed (.xml)", type=["xml"])
