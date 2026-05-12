@@ -6,7 +6,8 @@ st.set_page_config(page_title="Heureka XML Sanitizer", layout="centered")
 st.title("📦 Heureka.cz XML Sanitizer")
 st.markdown("Upload your messy e-shop XML feed. We validate `<SHOPITEM>` taxonomy and fix missing tags instantly.")
 
-is_paid = st.query_params.get("payment") == "success"
+# SECURE TOKEN PATCH: Replaced simple "success" check with an obscure token
+is_paid = st.query_params.get("token") == "sk_live_9f82hXzPqL1m"
 if is_paid:
     st.success("✅ Platba byla úspěšná! Nahrajte svůj XML feed znovu pro okamžité stažení opravené verze.")
 
